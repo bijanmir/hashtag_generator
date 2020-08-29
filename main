@@ -1,0 +1,30 @@
+def hash_function(list):
+    for word in list:
+        print(word.join("# "), end="")
+
+
+steps = {"1": "Enter your text to convert to hashtag\n",
+         "2": "Press 0 to EXIT & print hashtags\n",
+         "3": "Delete by typing in the word to delete\n"}
+
+my_list = []
+print("Step 1: {0}Step 2: {1}Step 3: {2}".format(steps["1"], steps["3"], steps["2"]))
+while True:
+    user_input = input("\n")
+    if user_input == '0':
+        if len(my_list) < 1:
+            print("No things to show")
+        else:
+            break
+        break
+    else:
+        if len(user_input) > 0 and user_input not in my_list:
+            my_list.append(user_input)
+            print("Added {} ".format(user_input))
+        elif user_input in my_list:
+            my_list.remove(user_input)
+            print("Removed {} ".format(user_input))
+        else:
+            print("Try again...")
+
+hash_function(my_list)
